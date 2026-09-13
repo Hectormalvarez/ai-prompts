@@ -32,6 +32,12 @@ projects/
 
 Use the actual repository name as the directory name (`ai-prompts`, `my-api`, `portfolio-site`, ...). One directory per project, no shared or "misc" buckets.
 
+## Authoring rules
+
+- **Budget:** keep each rule file under ~50 lines. If a change would exceed it, move the detail into a doc the rule links to (ADR, runbook, `CONTRIBUTING.md`) and leave a pointer.
+- **Point, don't paste:** a rule is an index into the repo (file names, `make` targets, ADR numbers) — never inline the content it references.
+- **Audit periodically:** every always-on line is a per-task tax. Delete rules that haven't prevented a failure recently; don't encode what lint/CI already enforces mechanically.
+
 ## What belongs here vs. global
 
 | Goes here (project)                        | Goes in repo root (global)           |
