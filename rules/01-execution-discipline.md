@@ -17,4 +17,6 @@ Applies to every task. Rationale: prevents wasted context, unauthorized changes,
 
 - Use explicit context anchors (`@file`, `@problems`, `@terminal`, `@git`) instead of open-ended repository searches.
 - When exploration is needed, search with narrow patterns and list specific directories, not the whole tree.
-- For broad multi-area investigation, use subagents instead of burning the main context window.
+- Delegate broad, read-only, multi-area investigation (repo audits, cross-cutting scans, summarizing large docs) to subagents — especially when it would mean reading many files into the main context.
+- Subagents see nothing from this session: brief them self-contained — name the files/paths, state the exact scope, and specify what to return.
+- Never delegate edits, iterative work, or anything depending on session state. Subagent results are reports; any changes they propose are applied and verified in the main thread.
