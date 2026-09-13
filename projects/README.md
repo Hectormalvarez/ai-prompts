@@ -16,22 +16,17 @@ projects/
 
 ## Wiring a project
 
-1. **Rules** — symlink this repo's project rules into the target repo:
+1. **Rules** — author them here first (micro commits, one rule per commit), then copy the whole rules directory into the target repo and commit it there too:
 
    ```bash
-   ln -sfn /home/hadev/Projects/Code/ai-prompts/projects/my-project/rules /path/to/my-project/.clinerules
+   cp -r /home/hadev/Projects/Code/ai-prompts/projects/my-project/rules /path/to/my-project/.clinerules
    ```
 
-   Because the target is a symlink, editing rules here updates the project instantly. Project rules override globals on conflict.
+   Rules are maintained in **both places**: canonical source here, committed copy in the target repo. When updating rules, change them here, then re-copy to the project and commit the update there. Project rules override globals on conflict.
 
-2. **Skills** — either symlink individual skills into `~/.cline/skills/` (global) or into the project's `.cline/skills/` (project-only):
+2. **Skills** — either copy or symlink individual skills into `~/.cline/skills/` (global) or into the project's `.cline/skills/` (project-only).
 
-   ```bash
-   ln -sfn "$HOME/Projects/Code/ai-prompts/projects/my-project/skills/deploy-checklist" \
-           "$HOME/.cline/skills/deploy-checklist"
-   ```
-
-3. **Memory bank (optional)** — copy `projects/_template/memory-bank-rule.md` into the project's `.clinerules/` (or merge it in), then ask Cline to "initialize memory bank". This gives Cline persistent project context across sessions. Best for long-lived repos where context is repeatedly rebuilt.
+3. **Memory bank (optional)** — the memory bank rule lives in the project's rules (committed as part of step 1); the generated `memory-bank/` files themselves live in the target repo. Ask Cline to "initialize memory bank". This gives Cline persistent project context across sessions. Best for long-lived repos where context is repeatedly rebuilt.
 
 ## Naming
 

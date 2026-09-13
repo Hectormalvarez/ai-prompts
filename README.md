@@ -64,7 +64,7 @@ Invoke any skill by its name as a slash command (e.g., `/feature-pipeline`) or l
 
 ## Per-project configuration
 
-Project-specific rules, skills, and memory banks live under `projects/` — see [`projects/README.md`](projects/README.md). Project rules are symlinked into each repo's `.clinerules/` and **override** global rules on conflict.
+Project-specific rules, skills, and memory banks live under `projects/` — see [`projects/README.md`](projects/README.md). Project rules are authored here and **copied** into each repo's `.clinerules/` (committed in both places); the copies **override** global rules on conflict.
 
 ## Adding to this repo
 
