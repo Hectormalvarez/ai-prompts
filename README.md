@@ -60,6 +60,7 @@ Invoke any skill by its name as a slash command (e.g., `/feature-pipeline`) or l
 | `01-execution-discipline.md` | Plan/Act separation, one-action determinism, context hygiene |
 | `02-edit-protocols.md` | Edit tool selection, SEARCH/REPLACE formatting, error recovery |
 | `03-done-ness.md` | No scope creep, stop on ambiguity, verify before completion |
+| `04-commit-discipline.md` | Micro commits, one concern per commit, Conventional Commits format |
 
 ## Per-project configuration
 
