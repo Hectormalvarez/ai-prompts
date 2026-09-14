@@ -33,7 +33,8 @@ Existing real files/directories at the targets are backed up (never overwritten)
 
 | Skill | Role | Bundled templates |
 | :--- | :--- | :--- |
-| `persona-product-owner` | Idea → MVP-scoped user story | — |
+| `persona-product-owner` | Idea → MVP-scoped user story (standalone) | — |
+| `persona-ux-designer` | Observed-experience audit → UX-grounded user story | `templates/ux-audit.md` |
 | `persona-sdm` | Stories → sprints, tasks, priorities | `templates/epic.md` |
 | `persona-architect` | Technical decisions, constraints, ADRs | — (uses `write-adr`) |
 | `persona-developer` | Implements approved stories | — |
@@ -43,7 +44,7 @@ Existing real files/directories at the targets are backed up (never overwritten)
 
 ### Pipelines (gated multi-persona processes)
 
-- `feature-pipeline` — PO → SDM → Architect → **human gate** → Developer → QA → Code Reviewer → close-out. Fails route back one level.
+- `feature-pipeline` — UX Designer (interactive audit → story) → SDM → Architect → **human gate** → Developer → QA (incl. interactive UX validation) → Code Reviewer → close-out. Fails route back one level.
 - `bugfix-pipeline` — reproduce → diagnose → fix (+ regression test) → verify → review. Never fix before diagnosing.
 
 ### Utilities
